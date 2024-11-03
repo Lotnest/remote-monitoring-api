@@ -1,7 +1,3 @@
-Here’s a sample README for your Remote Monitoring and Alerting System for Applications project:
-
----
-
 # Remote Monitoring and Alerting System for Applications
 
 This project provides a backend system for monitoring the health of various applications. It leverages MongoDB for data storage and Spring Boot for the application framework, utilizing reactive programming principles for efficient health check operations.
