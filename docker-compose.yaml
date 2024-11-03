@@ -1,0 +1,24 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: remote-monitoring-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: remote-monitoring
+    volumes:
+      - mongo_data:/data/db
+  spring:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: monitoring_api
+    depends_on:
+      - mongodb
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/remote-monitoring
+
+volumes:
+  mongo_data:
