@@ -12,7 +12,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: monitoring_api
+    container_name: remote-monitoring-api
     depends_on:
       - mongodb
     ports:

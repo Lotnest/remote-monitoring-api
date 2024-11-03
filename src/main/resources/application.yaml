@@ -1,4 +1,12 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/remote-monitoring
+      uri: mongodb://mongodb:27017/remote-monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
